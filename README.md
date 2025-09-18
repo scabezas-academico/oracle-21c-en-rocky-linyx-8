@@ -1,6 +1,6 @@
 # Instalación de Oracle Database 23c en Rocky Linux 8
-Fecha: 14 de septiembre de 2025
-Autor: Sebastián Cabezas Ríos
+* Fecha: 14 de septiembre de 2025
+* Autor: Sebastián Cabezas Ríos
 
 # Requisitos
 ## Servidor UTM con Rocky Linux 8
