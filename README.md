@@ -11,7 +11,7 @@
 Esta guía asume que tienes un equipo Mac (MacBook, iMac, etc.) y deseas instalar Oracle Database 21c XE en un entorno Linux. Puedes usar una de las siguientes opciones para configurar el servidor:
 
   * **Opción Gratuita:** Usa **UTM** para crear una máquina virtual local con Rocky Linux 8.
-  * **Opción Pagada:** Usa un **servidor VPS** con Rocky Linux 8. Puedes ver en [PremiumHosting](https://premiumhosting.cl/soporte/?affid=622) Planes VPS desde los CLP $9.990 + IVA:
+  * **Opción Pagada:** Usa un **servidor VPS** con Rocky Linux 8. Puedes ver en [PremiumHosting](https://premiumhosting.cl/soporte/?affid=622) Planes VPS desde los CLP $9.900 + IVA:
     - 1 vCPU AMD Ryzen
     - 4 GB RAM DDR4
     - 60 GB Espacio NVMe SSD
