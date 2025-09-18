@@ -62,11 +62,11 @@ Después de instalar Rocky Linux 8, sigue estos pasos para preparar el sistema.
 
 ***2.1.b***  **Habilitar SSH:** Para conectarte remotamente, inicia el servicio SSH.
 
-    ```bash
-    systemctl start sshd
-    ```
+  ```bash
+  systemctl start sshd
+  ```
 
-    **💡 Ojo!:** Si usas un VPS, ya debería estar activo.
+  **💡 Ojo!:** Si usas un VPS, ya debería estar activo.
 
 ***2.1.c***  **Conexión SSH:** Conéctate a tu servidor desde la terminal de tu Mac.
 
