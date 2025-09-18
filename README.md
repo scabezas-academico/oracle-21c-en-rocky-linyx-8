@@ -18,6 +18,7 @@ Esta guía asume que tienes un equipo Mac (MacBook, iMac, etc.) y deseas instala
     - 1 TB Transferencia
     - 1 Dirección IP
 
+
 -----
 
 ## 2\. Preparación del Sistema
@@ -26,48 +27,48 @@ Después de instalar Rocky Linux 8, sigue estos pasos para preparar el sistema.
 
 ### 2.1. Configuración de la Red y Acceso SSH
 
-1.  **Conexión de red:** Si la red `ethernet` no está conectada, levántala con el siguiente comando:
+***2.1.a.***  **Conexión de red:** Si la red `ethernet` no está conectada, levántala con el siguiente comando:
 
-    ```bash
-    nmcli connection up enp0s1
-    ```
+  ```bash
+  nmcli connection up enp0s1
+  ```
 
-    Puedes verificar el estado de los dispositivos de red con:
+  Puedes verificar el estado de los dispositivos de red con:
 
-    ```bash
-    nmcli device status
-    ```
+  ```bash
+  nmcli device status
+  ```
 
-    Para que la conexión de red se levante automáticamente al iniciar el sistema, debes configurar su archivo de conexión.
+  Para que la conexión de red se levante automáticamente al iniciar el sistema, debes configurar su archivo de conexión.
 
-    ```bash
-    nmcli connection show
-    ```
+  ```bash
+  nmcli connection show
+  ```
 
-    Esto te mostrará una lista de las conexiones disponibles, y deberías ver el nombre de tu conexión enp0s1 o algo similar.
+  Esto te mostrará una lista de las conexiones disponibles, y deberías ver el nombre de tu conexión enp0s1 o algo similar.
 
-    Edita el archivo de configuración de la conexión con nano o tu editor de texto preferido. El archivo se encuentra en /etc/sysconfig/network-scripts/. Reemplaza ifcfg-enp0s1 con el nombre correcto de tu interfaz.
+  Edita el archivo de configuración de la conexión con nano o tu editor de texto preferido. El archivo se encuentra en /etc/sysconfig/network-scripts/. Reemplaza ifcfg-enp0s1 con el nombre correcto de tu interfaz.
 
 
-    ```bash
-    sudo vi /etc/sysconfig/network-scripts/ifcfg-enp0s1
-    ```
+  ```bash
+  sudo vi /etc/sysconfig/network-scripts/ifcfg-enp0s1
+  ```
 
-    Dentro del archivo, busca la línea que dice ONBOOT=no y cámbiala a ONBOOT=yes.
+  Dentro del archivo, busca la línea que dice ONBOOT=no y cámbiala a ONBOOT=yes.
 
-    ```vi
-    ONBOOT=yes
-    ```
+  ```vi
+  ONBOOT=yes
+  ```
 
-2.  **Habilitar SSH:** Para conectarte remotamente, inicia el servicio SSH.
+***2.1.b***  **Habilitar SSH:** Para conectarte remotamente, inicia el servicio SSH.
 
     ```bash
     systemctl start sshd
     ```
 
-    **💡 Consejo:** Si usas un VPS, ya debería estar activo.
+    **💡 Ojo!:** Si usas un VPS, ya debería estar activo.
 
-3.  **Conexión SSH:** Conéctate a tu servidor desde la terminal de tu Mac.
+***2.1.c***  **Conexión SSH:** Conéctate a tu servidor desde la terminal de tu Mac.
 
     ```bash
     ssh root@<dirección_ip_del_servidor>
