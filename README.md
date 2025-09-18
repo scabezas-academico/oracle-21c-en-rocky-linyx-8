@@ -70,9 +70,9 @@ Después de instalar Rocky Linux 8, sigue estos pasos para preparar el sistema.
 
 ***2.1.c***  **Conexión SSH:** Conéctate a tu servidor desde la terminal de tu Mac.
 
-    ```bash
-    ssh root@<dirección_ip_del_servidor>
-    ```
+   ```bash
+   ssh root@<dirección_ip_del_servidor>
+   ```
 
 ### 2.2. Actualización e Instalación de Paquetes
 
