@@ -230,19 +230,3 @@ Linux Error: 13: Permission denied
 ```bash
 sudo chown -R oracle:oinstall /opt/oracle/product/21c/dbhomeXE/network/log
 ```
-
------
-
-### ¿Qué fue editado y por qué?
-
-  * **Título:** Se hizo más claro y específico, indicando la versión de la base de datos (**21c XE**) para evitar confusiones.
-  * **Encabezados:** Se usaron encabezados con un sistema de numeración más simple (1, 2, 3...) y se añadieron descripciones cortas para cada sección.
-  * **Redundancia y Estructura:**
-      * Se agruparon comandos lógicos (ej. `nmcli` y `systemctl start sshd`) en una sola sección para mejorar el flujo.
-      * Se eliminaron las repeticiones de `* Como root` y `sudo su - oracle` al inicio de cada paso. En su lugar, se indicó al principio de la sección qué usuario debe usarse.
-  * **Claridad de los comandos:** Se añadieron comentarios (`# Variables de Oracle`) y consejos (`💡 Consejo`) para explicar la finalidad de cada comando.
-  * **Formato de código:** Se usaron bloques de código apropiados (`bash`, `url`, `nano`) para una mejor presentación.
-  * **Sección de Errores:** Se hizo más formal y útil, mostrando el error, la causa y la solución, lo que es mucho más práctico para el usuario.
-  * **Uso de negritas y emojis:** Se usaron negritas para resaltar palabras clave y emojis para darle un toque más visual y amigable al documento, sin ser excesivo.
-
-En general, la edición busca mejorar la experiencia del usuario, haciendo que el documento sea una **guía práctica y profesional** que cualquier persona, incluso sin un conocimiento profundo, pueda seguir sin problemas.
