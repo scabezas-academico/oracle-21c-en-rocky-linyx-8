@@ -149,6 +149,7 @@ sudo dnf -y localinstall oracle-database-preinstall-21c-1.0-1.el8.x86_64.rpm
     ```bash
     sudo systemctl enable oracle-xe-21c
     sudo systemctl start oracle-xe-21c
+    sudo /etc/init.d/oracle-xe-21c configure
     ```
 2.  **Configurar variables de entorno:** Cambia al usuario `oracle` y configura su perfil.
     ```bash
@@ -200,17 +201,20 @@ sudo dnf -y localinstall oracle-database-preinstall-21c-1.0-1.el8.x86_64.rpm
 
 ### 4.3. Abrir el Puerto del Firewall
 
+0. **Revisar que el puerto esté abierto**.
+
+   ```bash
+   sudo firewall-cmd --list-ports
+   ```
+
 1.  **Abrir el puerto 1521:** Permite el tráfico entrante para el puerto de Oracle.
     ```bash
-    sudo iptables -A INPUT -p tcp --dport 1521 -j ACCEPT
+    sudo firewall-cmd --add-port=1521/tcp --permanent
     ```
-    **💡 Consejo:** Puedes verificar las reglas actuales con `sudo iptables -L -n`.
-2.  **Guardar las reglas:** Crea el directorio para las reglas si no existe y guárdalas para que persistan después de un reinicio.
+2.  **Habilitar las políticas del Firewall:**
     ```bash
-    sudo mkdir -p /etc/iptables
-    sudo iptables-save > /etc/iptables/rules.v4
+    sudo firewall-cmd --reload
     ```
-
 -----
 
 ## 5\. Solución de Problemas Comunes
