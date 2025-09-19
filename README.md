@@ -199,6 +199,18 @@ sudo dnf -y localinstall oracle-database-preinstall-21c-1.0-1.el8.x86_64.rpm
     ```
     Asegúrate de que el estado indique `READY` para los servicios y que el host sea `0.0.0.0` (o el que hayas configurado).
 
+### 4.3 Configurar desde SQL PLUS
+
+```bash
+sqlplus / as sysdba
+```
+```bash
+startup;
+```
+```bash
+ALTER SYSTEM REGISTER;
+```
+
 ### 4.3. Abrir el Puerto del Firewall
 
 0. **Revisar que el puerto esté abierto**.
@@ -216,21 +228,4 @@ sudo dnf -y localinstall oracle-database-preinstall-21c-1.0-1.el8.x86_64.rpm
     sudo firewall-cmd --reload
     ```
 -----
-
-## 5\. Solución de Problemas Comunes
-
-### Listener no se inicia (Error `Permission denied`)
-
-**Error:**
-
-```bash
-NL-00280: error creating log stream /opt/oracle/product/21c/dbhomeXE/network/log/listener.log
-Linux Error: 13: Permission denied
-```
-
-**Causa:** El usuario `oracle` no tiene los permisos para escribir en el directorio de logs del listener.
-**Solución:** Cambia la propiedad del directorio de logs al usuario `oracle`.
-
-```bash
-sudo chown -R oracle:oinstall /opt/oracle/product/21c/dbhomeXE/network/log
-```
+Finalizado el 19 de septiembre de 2025
